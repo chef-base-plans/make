@@ -1,4 +1,4 @@
-[![Build Status](https://dev.azure.com/chefcorp-partnerengineering/Chef%20Base%20Plans/_apis/build/status/chef-base-plans.make?branchName=master)](https://dev.azure.com/chefcorp-partnerengineering/Chef%20Base%20Plans/_build/latest?definitionId=69&branchName=master)
+[![Build Status](https://dev.azure.com/chefcorp-partnerengineering/Chef%20Base%20Plans/_apis/build/status/chef-base-plans.make?branchName=master)](https://dev.azure.com/chefcorp-partnerengineering/Chef%20Base%20Plans/_build/latest?definitionId=114&branchName=master)
 
 # make
 
@@ -37,6 +37,19 @@ To install this plan, you should run the following commands to first install, an
 will add the following binary to the PATH:
 
 * /bin/make
+
+```bash
+$ hab pkg install core/make --binlink
+» Installing core/make
+☁ Determining latest version of core/make in the 'stable' channel
+☛ Verifying core/make/4.2.1/20200306002515
+→ Using core/glibc/2.29/20200305172459
+→ Using core/linux-headers/4.19.62/20200305172241
+✓ Installed core/make/4.2.1/20200306002515
+★ Install of core/make/4.2.1/20200306002515 complete with 1 new packages installed.
+» Binlinking make from core/make/4.2.1/20200306002515 into /bin
+★ Binlinked make from core/make/4.2.1/20200306002515 to /bin/make
+```
 
 #### Using an example binary
 
