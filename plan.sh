@@ -25,19 +25,6 @@ pkg_build_deps=(
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 
-do_prepare() {
-  do_default_prepare
-
-  # Don't look for library dependencies in the root system (i.e. `/lib`,
-  # `/usr/lib`, etc.)
-  patch -p1 -i "$PLAN_CONTEXT/no-sys-dirs.patch"
-
-  # Work around an error caused by Glibc 2.27
-  #
-  # Thanks to: http://www.linuxfromscratch.org/lfs/view/8.2/chapter05/make.html
-  sed -i '211,217 d; 219,229 d; 232 d' glob/glob.c
-}
-
 do_check() {
   # Force `ar` to not run in deterministic mode, as the testsuite relies on
   # UID, GID, timestamp and file mode values to be correctly stored.
